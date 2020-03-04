@@ -37,11 +37,11 @@ public class Shell {
         console = new BufferedReader(new InputStreamReader(System.in));
 
         // Default environment
-        environment.put("ExitMsg", "Bye!");
+        environment.put("ExitMsg", ANSI_BRIGHT_PURPLE + "Bye!" + ANSI_RESET);
     }
 
     /**
-     * Main shell cycle. Exit when Ctrl+D is entered or `exit` command calls
+     * Main shell loop. Exit when Ctrl+D is entered or `exit` command calls
      */
     public void run() {
 
