@@ -1,17 +1,22 @@
 package ru.itmo.softwaredesign.nbash.parser;
 
-public class Token {
+class Token {
 
     private final String data;
     private final TokenType type;
 
-    public TokenType getType() {
-        return type;
-    }
-
+    /**
+     * @param data -- Token string representation
+     *             or null for operators or delimiter
+     * @param type -- {@link TokenType}
+     */
     public Token(String data, TokenType type) {
         this.data = data;
         this.type = type;
+    }
+
+    public TokenType getType() {
+        return type;
     }
 
     /**

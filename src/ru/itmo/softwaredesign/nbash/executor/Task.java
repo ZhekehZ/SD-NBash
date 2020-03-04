@@ -3,27 +3,31 @@ package ru.itmo.softwaredesign.nbash.executor;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public abstract class Task {
-
-    protected final List<String> args;
+    protected final List<String> args;                           // Call arguments
     protected final StringBuffer stdOut = new StringBuffer();
     protected final StringBuffer stdErr = new StringBuffer();
     protected BufferedReader stdIn = null;
-    protected Map<String, String> environment = new HashMap<>();
+    protected Map<String, String> environment = new HashMap<>(); // Local environment
 
     public Task(List<String> args) {
         this.args = args;
+    }
+
+    public Task() {
+        args = new ArrayList<>();
     }
 
     public void setStdIn(BufferedReader reader) {
         stdIn = reader;
     }
 
-    public void extentEnvironment(Map<String, String> environment) {
+    public void extendEnvironment(Map<String, String> environment) {
         this.environment.putAll(environment);
     }
 
@@ -37,6 +41,12 @@ public abstract class Task {
 
     public abstract ExitCode execute();
 
+    /**
+     * @param file -- path to file
+     * @return Reader from file if file is not null
+     * Reader form standard input otherwise
+     * @throws FileNotFoundException
+     */
     protected BufferedReader openFileOrStdin(String file) throws FileNotFoundException {
         return file != null ? new BufferedReader(new FileReader(file)) : stdIn;
     }

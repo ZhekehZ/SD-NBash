@@ -7,7 +7,6 @@ import ru.itmo.softwaredesign.nbash.executor.TaskFactory;
 import ru.itmo.softwaredesign.nbash.parser.Parser;
 import ru.itmo.softwaredesign.nbash.parser.ParsingResult;
 import ru.itmo.softwaredesign.nbash.parser.ParsingResultStatus;
-import ru.itmo.softwaredesign.nbash.parser.Token;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,8 +19,6 @@ import java.util.Map;
 import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_FAILURE;
 import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_SUCCESS;
 import static ru.itmo.softwaredesign.nbash.parser.ParsingResultStatus.SUCCESS;
-import static ru.itmo.softwaredesign.nbash.parser.TokenType.ASSIGN_OPERATOR;
-import static ru.itmo.softwaredesign.nbash.parser.TokenType.DELIMITER;
 
 
 /**
@@ -29,13 +26,11 @@ import static ru.itmo.softwaredesign.nbash.parser.TokenType.DELIMITER;
  */
 public class Shell {
 
-    private final Map<String, String> environment = new HashMap<>();
-
     // Colors for output
-    private static final String ANSI_RESET         = "\u001B[0m";
-    private static final String ANSI_BRIGHT_RED    = "\u001B[91m";
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_BRIGHT_RED = "\u001B[91m";
     private static final String ANSI_BRIGHT_PURPLE = "\u001B[95m";
-
+    private final Map<String, String> environment = new HashMap<>();
     private final BufferedReader console;
 
     {
@@ -66,7 +61,7 @@ public class Shell {
             }
 
             if (parsingResult.getStatus() == SUCCESS) {
-                if (processIfAssignment(parsingResult.getTokens())) {
+                if (processIfAssignment(parsingResult)) {
                     continue;
                 }
 
@@ -103,7 +98,7 @@ public class Shell {
     /**
      * Reads next line from standard input.
      * Calls {@link Shell#runExit(ExitCode)} with {@link ExitCode#EXIT_FAILURE}
-     *  when read fails
+     * when read fails
      *
      * @return line from stdin
      */
@@ -129,18 +124,13 @@ public class Shell {
     /**
      * Extends context if an operation is an assignment
      *
-     * @param tokens - list of Tokens {@link Token}
+     * @param parsed -- paring result
      * @return true if operation is assignment
      */
-    boolean processIfAssignment(List<Token> tokens) {
-        if (tokens.size() < 3) {
-            return false;
-        }
-        if (tokens.get(0).getType() != DELIMITER
-            && tokens.get(1).getType() == ASSIGN_OPERATOR
-            && tokens.get(2).getType() != DELIMITER
-           ) {
-            environment.put(tokens.get(0).getStringRepr(), tokens.get(2).getStringRepr());
+    boolean processIfAssignment(ParsingResult parsed) {
+        Map.Entry<String, String> entry = Parser.getSubstitutionIfAssignment(parsed);
+        if (entry != null) {
+            environment.put(entry.getKey(), entry.getValue());
             return true;
         }
         return false;
@@ -149,6 +139,7 @@ public class Shell {
 
     /**
      * Calls Exit() command
+     *
      * @param code -- exit code
      */
     public void runExit(ExitCode code) {
@@ -161,14 +152,14 @@ public class Shell {
         if (code != EXIT_SUCCESS) {
             System.out.println(ANSI_BRIGHT_RED + code.toString() + ANSI_RESET);
         }
-        exit.extentEnvironment(environment);
+        exit.extendEnvironment(environment);
         exit.execute();
     }
 
 
     /**
      * Returns a string with information about the expected character
-     *  when the quote or pipe is not closed
+     * when the quote or pipe is not closed
      *
      * @param status -- status after parsing
      * @return prompt string representation
