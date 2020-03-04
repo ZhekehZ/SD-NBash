@@ -6,8 +6,14 @@ import java.util.List;
 import static ru.itmo.softwaredesign.nbash.parser.ParsingResultStatus.*;
 import static ru.itmo.softwaredesign.nbash.parser.TokenType.*;
 
-public class Tokenizer {
-
+/**
+ * Provides static functions for tokenization
+ */
+class Tokenizer {
+    /**
+     * @param string -- string for tokenization
+     * @return {@link ParsingResult}
+     */
     public static ParsingResult tokenizeString(String string) {
         List<Token> tokenList = new ArrayList<>();
         State state = State.REGULAR;
@@ -25,11 +31,11 @@ public class Tokenizer {
                 case '\"':
                 case '\'':
                     State exceptState = symbol == '\"' ? State.SINGLE_QUOTES
-                                                       : State.DOUBLE_QUOTES;
+                            : State.DOUBLE_QUOTES;
                     State symbolState = symbol == '\"' ? State.DOUBLE_QUOTES
-                                                       : State.SINGLE_QUOTES;
+                            : State.SINGLE_QUOTES;
                     TokenType tokenType = symbol == '\'' ? SINGLE_QUOTED_WORD
-                                                         : DOUBLE_QUOTED_WORD;
+                            : DOUBLE_QUOTED_WORD;
 
                     if (state != exceptState) {
                         String tokenString = string.substring(anchor, pos);
@@ -48,7 +54,7 @@ public class Tokenizer {
                 case '|':
                 case '=':
                     TokenType operatorType = symbol == '|' ? PIPE_OPERATOR
-                                                           : ASSIGN_OPERATOR;
+                            : ASSIGN_OPERATOR;
                     if (state == State.REGULAR) {
                         tokenList.addAll(splitWord(string.substring(anchor, pos)));
                         anchor = pos + 1;
@@ -93,6 +99,13 @@ public class Tokenizer {
         return new ParsingResult(tokenList, SUCCESS);
     }
 
+
+    /**
+     * @param prev       earlier tokenized string prefix
+     * @param nextString rest of the string
+     * @return the result of tokenization , as if the entire string was
+     * passed entirely to the {@link Tokenizer#tokenizeString(String)} function
+     */
     public static ParsingResult continueTokenization(ParsingResult prev, String nextString) {
         List<Token> tokens;
         ParsingResultStatus status = prev.getStatus();
@@ -121,6 +134,12 @@ public class Tokenizer {
         }
     }
 
+    /**
+     * Converts tokens into string and tokenize it
+     *
+     * @param tokens -- list of tokens
+     * @return retokenized string
+     */
     public static ParsingResult reTokenize(List<Token> tokens) {
         if (tokens == null) {
             return new ParsingResult(null, FAIL);
@@ -136,8 +155,8 @@ public class Tokenizer {
 
     /**
      * @param string -- A string of regular
-     *               (in this sense : {@link State#REGULAR}) words
-     * @return
+     *               (in this sense : {@link TokenType#REGULAR_WORD}) words
+     * @return list of regular words splitted by delimiter {@link TokenType#DELIMITER}
      */
     private static List<Token> splitWord(String string) {
         List<Token> words = new ArrayList<>();

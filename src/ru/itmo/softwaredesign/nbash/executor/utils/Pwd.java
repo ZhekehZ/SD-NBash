@@ -27,7 +27,7 @@ class PwdImpl extends Task {
         stdOut.append(Paths.get("").toAbsolutePath().toString());
         if (!args.isEmpty()) {
             stdErr.append("pwd: args ignored")
-                  .append(String.join(", ", args.toString()));
+                    .append(String.join(", ", args.toString()));
         }
         return EXIT_SUCCESS;
     }

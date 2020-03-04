@@ -8,22 +8,28 @@ import static ru.itmo.softwaredesign.nbash.parser.ParsingResultStatus.FAIL;
 import static ru.itmo.softwaredesign.nbash.parser.ParsingResultStatus.SUCCESS;
 import static ru.itmo.softwaredesign.nbash.parser.TokenType.REGULAR_WORD;
 
-public class Substitutor {
+/**
+ * Provides static functions for $-substitution
+ */
+class Substitutor {
 
-    private static final int MAX_ITER = 8;
-
+    /**
+     * Applies substitutions to regular and double-quoted words ({@link TokenType})
+     *
+     * @param tokens      -- list of all tokens
+     * @param environment -- known variables
+     * @return tokens with applied substitutions
+     */
     public static ParsingResult substituteAll(ParsingResult tokens, Map<String, String> environment) {
         if (tokens == null || environment == null) {
             return new ParsingResult(null, FAIL);
         }
 
-        List<Token> parsed = null;
-
         if (tokens.getStatus() != SUCCESS) {
             return tokens;
         }
 
-        parsed = new ArrayList<>();
+        List<Token> parsed = new ArrayList<>();
 
         for (Token token : tokens.getTokens()) {
             switch (token.getType()) {
@@ -48,6 +54,12 @@ public class Substitutor {
         return new ParsingResult(parsed, SUCCESS);
     }
 
+
+    /**
+     * @param string      -- regular word
+     * @param environment -- known variables
+     * @return string with applied substitutions of the form $X -> Y, where X:=Y is in the environment
+     */
     public static String substitute(String string, Map<String, String> environment) {
         StringBuilder builder = new StringBuilder();
 

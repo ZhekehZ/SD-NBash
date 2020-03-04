@@ -8,6 +8,9 @@ import java.util.stream.Collectors;
 
 import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_SUCCESS;
 
+/**
+ * Tasks combined by the pipe operator
+ */
 public class CombinedTask extends Task {
 
     private List<Task> tasks;
@@ -16,9 +19,16 @@ public class CombinedTask extends Task {
         super(null);
 
         tasks = args.stream().map(TaskFactory::getTask).collect(Collectors.toList());
-        tasks.forEach(task -> task.extentEnvironment(environment));
+        tasks.forEach(task -> task.extendEnvironment(environment));
     }
 
+    /**
+     * Sequentially runs each command, waits for it to complete, and copies the
+     * output of the previous command to the input of the next one
+     * StdErr is formed as the sum of all errors
+     *
+     * @return {@link ExitCode}
+     */
     @Override
     public ExitCode execute() {
         ExitCode code;

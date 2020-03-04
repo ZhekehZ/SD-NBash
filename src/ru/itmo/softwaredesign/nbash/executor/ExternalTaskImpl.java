@@ -4,10 +4,13 @@ import java.io.*;
 import java.util.List;
 import java.util.Map;
 
+import static ru.itmo.softwaredesign.nbash.executor.ExitCode.COMMAND_NOT_FOUND;
 import static ru.itmo.softwaredesign.nbash.executor.ExitCode.INTERRUPT_ERROR;
-import static ru.itmo.softwaredesign.nbash.executor.ExitCode.IO_ERROR;
 
-public class ExternalTaskImpl extends Task {
+/**
+ * Task that references an external program
+ */
+class ExternalTaskImpl extends Task {
 
     private final ProcessBuilder processBuilder;
 
@@ -16,19 +19,23 @@ public class ExternalTaskImpl extends Task {
         processBuilder = new ProcessBuilder(args);
     }
 
-    public ExternalTaskImpl extendEnvironment(Map<String, String> environment) {
-        processBuilder.environment().putAll(environment);
-        return this;
-    }
-
     @Override
-    public void extentEnvironment(Map<String, String> environment) {
+    public void extendEnvironment(Map<String, String> environment) {
         processBuilder.environment().putAll(environment);
     }
 
+    /**
+     * Runs external program:
+     * 1. starts new process
+     * 2. copies stdIn to its standard input
+     * 3. closes standard input
+     * 4. waits for the program to finish
+     *
+     * @return {@link ExitCode}
+     */
     @Override
     public ExitCode execute() {
-        int errorCode = -1;
+        int errorCode;
 
         try {
             Process process = processBuilder.start();
@@ -63,7 +70,7 @@ public class ExternalTaskImpl extends Task {
             }
 
         } catch (IOException e) {
-            return IO_ERROR;
+            return COMMAND_NOT_FOUND;
         } catch (InterruptedException e) {
             return INTERRUPT_ERROR;
         }
