@@ -12,16 +12,16 @@ import static ru.itmo.softwaredesign.nbash.executor.ExitCode.INTERRUPT_ERROR;
  */
 class ExternalTaskImpl extends Task {
 
-    private final ProcessBuilder processBuilder;
+    private final ProcessBuilder externalCommand;
 
     public ExternalTaskImpl(List<String> args) {
         super(args);
-        processBuilder = new ProcessBuilder(args);
+        externalCommand = new ProcessBuilder(args);
     }
 
     @Override
     public void extendEnvironment(Map<String, String> environment) {
-        processBuilder.environment().putAll(environment);
+        externalCommand.environment().putAll(environment);
     }
 
     /**
@@ -38,7 +38,7 @@ class ExternalTaskImpl extends Task {
         int errorCode;
 
         try {
-            Process process = processBuilder.start();
+            Process process = externalCommand.start();
             BufferedReader outReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             BufferedReader errReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
 
