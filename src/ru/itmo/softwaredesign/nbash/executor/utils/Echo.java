@@ -14,16 +14,17 @@ public class Echo implements TaskBuilder {
         return new EchoImpl(args);
     }
 
-}
+    private static class EchoImpl extends Task {
+        protected EchoImpl(List<String> args) {
+            super(args);
+        }
 
-class EchoImpl extends Task {
-    protected EchoImpl(List<String> args) {
-        super(args);
+        @Override
+        public ExitCode execute() {
+            stdOut.append(String.join(" ", args));
+            return EXIT_SUCCESS;
+        }
     }
 
-    @Override
-    public ExitCode execute() {
-        stdOut.append(String.join(" ", args));
-        return EXIT_SUCCESS;
-    }
 }
+

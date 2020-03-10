@@ -17,28 +17,28 @@ public class Cat implements TaskBuilder {
     public Task build(List<String> args) {
         return new CatImpl(args);
     }
-}
 
-class CatImpl extends Task {
+    private static class CatImpl extends Task {
 
-    public CatImpl(List<String> args) {
-        super(args);
-    }
-
-    @Override
-    public ExitCode execute() {
-
-        if (args.size() > 1) {
-            stdErr.append("Invalid argument number");
-            return EXIT_FAILURE;
+        public CatImpl(List<String> args) {
+            super(args);
         }
 
-        try (BufferedReader br = openFileOrStdin(args.isEmpty() ? null : args.get(0))) {
-            stdOut.append(br.lines().collect(Collectors.joining("\n")));
-        } catch (IOException e) {
-            return IO_ERROR;
-        }
+        @Override
+        public ExitCode execute() {
 
-        return EXIT_SUCCESS;
+            if (args.size() > 1) {
+                stdErr.append("Invalid argument number");
+                return EXIT_FAILURE;
+            }
+
+            try (BufferedReader br = openFileOrStdin(args.isEmpty() ? null : args.get(0))) {
+                stdOut.append(br.lines().collect(Collectors.joining("\n")));
+            } catch (IOException e) {
+                return IO_ERROR;
+            }
+
+            return EXIT_SUCCESS;
+        }
     }
 }

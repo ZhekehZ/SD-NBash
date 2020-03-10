@@ -16,49 +16,53 @@ public class Wc implements TaskBuilder {
     public Task build(List<String> args) {
         return new WcImpl(args);
     }
-}
 
-class WcImpl extends Task {
 
-    public WcImpl(List<String> args) {
-        super(args);
-    }
+    private static class WcImpl extends Task {
 
-    @Override
-    public ExitCode execute() {
-
-        if (args.size() > 1) {
-            stdErr.append("Invalid argument number");
-            return EXIT_FAILURE;
+        public WcImpl(List<String> args) {
+            super(args);
         }
 
-        try (BufferedReader br = openFileOrStdin(args.isEmpty() ? null : args.get(0))) {
+        @Override
+        public ExitCode execute() {
 
-            int words = 0, lines = 0, bytes = 0;
-
-            String line;
-            while ((line = br.readLine()) != null) {
-                lines++;
-                String[] aWords = line.split("\\s+");
-                words += aWords.length;
-                for (String word : aWords) {
-                    if (word.length() == 0) {
-                        words--;
-                    }
-                }
-                bytes += line.length();
+            if (args.size() > 1) {
+                stdErr.append("Invalid argument number");
+                return EXIT_FAILURE;
             }
 
-            stdOut.append(lines)
-                    .append(' ')
-                    .append(words)
-                    .append(' ')
-                    .append(bytes + lines);
+            try (BufferedReader br = openFileOrStdin(args.isEmpty() ? null : args.get(0))) {
 
-        } catch (IOException e) {
-            return IO_ERROR;
+                int words = 0, lines = 0, bytes = 0;
+
+                String line;
+                while ((line = br.readLine()) != null) {
+                    lines++;
+                    String[] aWords = line.split("\\s+");
+                    words += aWords.length;
+                    for (String word : aWords) {
+                        if (word.length() == 0) {
+                            words--;
+                        }
+                    }
+                    bytes += line.length();
+                }
+
+                stdOut.append(lines)
+                        .append(' ')
+                        .append(words)
+                        .append(' ')
+                        .append(bytes + lines);
+
+            } catch (IOException e) {
+                return IO_ERROR;
+            }
+
+            return EXIT_SUCCESS;
         }
-
-        return EXIT_SUCCESS;
     }
+
+
 }
+

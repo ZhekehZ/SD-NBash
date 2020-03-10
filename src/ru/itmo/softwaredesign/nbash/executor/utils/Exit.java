@@ -14,17 +14,17 @@ public class Exit implements TaskBuilder {
         return new ExitImpl(args);
     }
 
-}
+    private static class ExitImpl extends Task {
+        protected ExitImpl(List<String> args) {
+            super(args);
+        }
 
-class ExitImpl extends Task {
-    protected ExitImpl(List<String> args) {
-        super(args);
+        @Override
+        public ExitCode execute() {
+            System.out.println(environment.getOrDefault("ExitMsg", ""));
+            System.exit(0);
+            return EXIT_SUCCESS;
+        }
     }
 
-    @Override
-    public ExitCode execute() {
-        System.out.println(environment.getOrDefault("ExitMsg", ""));
-        System.exit(0);
-        return EXIT_SUCCESS;
-    }
 }

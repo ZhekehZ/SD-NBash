@@ -1,6 +1,5 @@
 package ru.itmo.softwaredesign.nbash;
 
-import ru.itmo.softwaredesign.nbash.executor.CombinedTask;
 import ru.itmo.softwaredesign.nbash.executor.ExitCode;
 import ru.itmo.softwaredesign.nbash.executor.Task;
 import ru.itmo.softwaredesign.nbash.executor.TaskFactory;
@@ -67,7 +66,7 @@ public class Shell {
 
                 List<List<String>> command = Parser.tokensToCommand(parsingResult.getTokens());
 
-                Task ext = new CombinedTask(command, environment);
+                Task ext = TaskFactory.getComplexTask(command, environment);
                 ExitCode code = ext.execute();
 
                 if (code != EXIT_SUCCESS) {
@@ -143,16 +142,13 @@ public class Shell {
      * @param code -- exit code
      */
     public void runExit(ExitCode code) {
-        List<String> cmd = new ArrayList<>();
-        cmd.add("exit");
-        Task exit = TaskFactory.getTask(cmd);
+        Task exit = TaskFactory.getDirectTask("exit", new ArrayList<>(), environment);
         if (exit == null) {
             System.exit(1);
         }
         if (code != EXIT_SUCCESS) {
             System.out.println(ANSI_BRIGHT_RED + code.toString() + ANSI_RESET);
         }
-        exit.extendEnvironment(environment);
         exit.execute();
     }
 

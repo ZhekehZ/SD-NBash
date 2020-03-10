@@ -15,20 +15,21 @@ public class Pwd implements TaskBuilder {
         return new PwdImpl(args);
     }
 
-}
 
-class PwdImpl extends Task {
-    protected PwdImpl(List<String> args) {
-        super(args);
-    }
-
-    @Override
-    public ExitCode execute() {
-        stdOut.append(Paths.get("").toAbsolutePath().toString());
-        if (!args.isEmpty()) {
-            stdErr.append("pwd: args ignored")
-                    .append(String.join(", ", args.toString()));
+    private static class PwdImpl extends Task {
+        protected PwdImpl(List<String> args) {
+            super(args);
         }
-        return EXIT_SUCCESS;
+
+        @Override
+        public ExitCode execute() {
+            stdOut.append(Paths.get("").toAbsolutePath().toString());
+            if (!args.isEmpty()) {
+                stdErr.append("pwd: args ignored")
+                        .append(String.join(", ", args.toString()));
+            }
+            return EXIT_SUCCESS;
+        }
     }
+
 }

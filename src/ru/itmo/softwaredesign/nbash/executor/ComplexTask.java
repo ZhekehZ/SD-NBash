@@ -11,15 +11,16 @@ import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_SUCCESS;
 /**
  * Tasks combined by the pipe operator
  */
-public class CombinedTask extends Task {
+class ComplexTask extends Task {
 
     private List<Task> tasks;
 
-    public CombinedTask(List<List<String>> args, Map<String, String> environment) {
+    public ComplexTask(List<List<String>> args, Map<String, String> environment) {
         super(null);
 
-        tasks = args.stream().map(TaskFactory::getTask).collect(Collectors.toList());
-        tasks.forEach(task -> task.extendEnvironment(environment));
+        tasks = args.stream()
+                    .map(a -> TaskFactory.getTask(a, environment))
+                    .collect(Collectors.toList());
     }
 
     /**
