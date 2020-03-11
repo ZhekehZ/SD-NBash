@@ -60,7 +60,7 @@ class Substitutor {
      * @param environment -- known variables
      * @return string with applied substitutions of the form $X -> Y, where X:=Y is in the environment
      */
-    public static String substitute(String string, Map<String, String> environment) {
+    static String substitute(String string, Map<String, String> environment) {
         StringBuilder builder = new StringBuilder();
 
         int prev = 0;

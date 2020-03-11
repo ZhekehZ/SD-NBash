@@ -115,7 +115,7 @@ public class Shell {
     /**
      * @return prompt string representation
      */
-    public String getPrompt() {
+    String getPrompt() {
         return "\u019EBash> ";
     }
 
@@ -141,7 +141,7 @@ public class Shell {
      *
      * @param code -- exit code
      */
-    public void runExit(ExitCode code) {
+    void runExit(ExitCode code) {
         Task exit = TaskFactory.getDirectTask("exit", new ArrayList<>(), environment);
         if (exit == null) {
             System.exit(1);
@@ -160,7 +160,7 @@ public class Shell {
      * @param status -- status after parsing
      * @return prompt string representation
      */
-    public String getWaitingMsg(ParsingResultStatus status) {
+    String getWaitingMsg(ParsingResultStatus status) {
         switch (status) {
             case PIPE_WAITING:
                 return "pipe> ";
