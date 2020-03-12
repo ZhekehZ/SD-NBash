@@ -37,9 +37,6 @@ public class TaskFactory {
      */
     @Nullable
     static Task getTask(List<String> args, Map<String, String> environment) {
-        if (args.size() == 0) {
-            return notFoundTask;
-        }
         return getDirectTask(args.get(0), args.subList(1, args.size()), environment);
     }
 
@@ -54,7 +51,7 @@ public class TaskFactory {
         if (internals.containsKey(taskName)) {
             task = internals.get(taskName).build(args);
         } else {
-            args.add(taskName);
+            args.add(0, taskName);
             task = new ExternalTaskImpl(args);
         }
         if (task != null) {
