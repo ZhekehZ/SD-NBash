@@ -27,6 +27,7 @@ public class TaskFactory {
         internals.put("wc", new Wc());
         internals.put("pwd", new Pwd());
         internals.put("exit", new Exit());
+        internals.put("grep", new Grep());
     }
 
     /**
