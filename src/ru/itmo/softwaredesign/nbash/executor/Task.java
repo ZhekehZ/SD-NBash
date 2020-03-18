@@ -12,8 +12,8 @@ public abstract class Task {
     protected final List<String> args;                           // Call arguments
     protected final StringBuffer stdOut = new StringBuffer();
     protected final StringBuffer stdErr = new StringBuffer();
+    protected final Map<String, String> environment = new HashMap<>(); // Local environment
     protected BufferedReader stdIn = null;
-    protected Map<String, String> environment = new HashMap<>(); // Local environment
 
     public Task(List<String> args) {
         this.args = args;

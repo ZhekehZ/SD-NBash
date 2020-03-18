@@ -10,13 +10,11 @@ import ru.itmo.softwaredesign.nbash.parser.ParsingResultStatus;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_FAILURE;
-import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_SUCCESS;
+import static ru.itmo.softwaredesign.nbash.executor.ExitCode.*;
 import static ru.itmo.softwaredesign.nbash.parser.ParsingResultStatus.SUCCESS;
 
 
@@ -49,7 +47,7 @@ public class Shell {
 
             String rawCommand = readNextLine();
             if (rawCommand == null) {
-                break;
+                rawCommand = "exit";
             }
 
             ParsingResult parsingResult = Parser.parse(rawCommand, null, environment);
@@ -69,7 +67,7 @@ public class Shell {
                 Task ext = TaskFactory.getComplexTask(command, environment);
                 ExitCode code = ext.execute();
 
-                if (code != EXIT_SUCCESS) {
+                if (code != EXIT_SUCCESS && code != EXIT_QUIT_SUCCESS) {
                     System.out.println(ANSI_BRIGHT_PURPLE
                             + "Execution failed ("
                             + code.toString()
@@ -84,20 +82,21 @@ public class Shell {
                 if (!stderr.isEmpty()) {
                     System.out.println(ANSI_BRIGHT_RED + ext.getStdErr() + ANSI_RESET);
                 }
+
+                if (code == EXIT_QUIT_SUCCESS || code == EXIT_QUIT_FAIL) {
+                    break;
+                }
             } else {
                 System.out.println(ANSI_BRIGHT_RED + "Parsing error!" + ANSI_RESET);
             }
 
         }
-
-        runExit(EXIT_SUCCESS);
     }
 
 
     /**
      * Reads next line from standard input.
-     * Calls {@link Shell#runExit(ExitCode)} with {@link ExitCode#EXIT_FAILURE}
-     * when read fails
+     * Returns `exit 1` call when read fails
      *
      * @return line from stdin
      */
@@ -106,7 +105,7 @@ public class Shell {
         try {
             command = console.readLine();
         } catch (IOException e) {
-            runExit(EXIT_FAILURE);
+            return "exit 1";
         }
         return command;
     }
@@ -126,30 +125,13 @@ public class Shell {
      * @param parsed -- paring result
      * @return true if operation is assignment
      */
-    boolean processIfAssignment(ParsingResult parsed) {
+    private boolean processIfAssignment(ParsingResult parsed) {
         Map.Entry<String, String> entry = Parser.getSubstitutionIfAssignment(parsed);
         if (entry != null) {
             environment.put(entry.getKey(), entry.getValue());
             return true;
         }
         return false;
-    }
-
-
-    /**
-     * Calls Exit() command
-     *
-     * @param code -- exit code
-     */
-    void runExit(ExitCode code) {
-        Task exit = TaskFactory.getDirectTask("exit", new ArrayList<>(), environment);
-        if (exit == null) {
-            System.exit(1);
-        }
-        if (code != EXIT_SUCCESS) {
-            System.out.println(ANSI_BRIGHT_RED + code.toString() + ANSI_RESET);
-        }
-        exit.execute();
     }
 
 

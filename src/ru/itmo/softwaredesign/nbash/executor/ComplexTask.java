@@ -19,8 +19,8 @@ class ComplexTask extends Task {
         super(null);
 
         tasks = args.stream()
-                    .map(a -> TaskFactory.getTask(a, environment))
-                    .collect(Collectors.toList());
+                .map(a -> TaskFactory.getTask(a, environment))
+                .collect(Collectors.toList());
     }
 
     /**

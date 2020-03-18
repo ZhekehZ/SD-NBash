@@ -5,7 +5,10 @@ public enum ExitCode {
     IO_ERROR,          // Io error
     INTERRUPT_ERROR,   // Interrupt error
     EXIT_FAILURE,      // Bad exit code
-    COMMAND_NOT_FOUND; // Command not found exception
+    COMMAND_NOT_FOUND, // Command not found exception
+    EXIT_QUIT_SUCCESS, // Terminate with success
+    EXIT_QUIT_FAIL;    // Terminate with an error
+
 
     /**
      * @param code -- program exit code
