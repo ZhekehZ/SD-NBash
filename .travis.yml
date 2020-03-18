@@ -1,2 +1,5 @@
 language: java
 os: linux
+before_script:
+  - echo "not implemented" && exit 1
+script: exit
