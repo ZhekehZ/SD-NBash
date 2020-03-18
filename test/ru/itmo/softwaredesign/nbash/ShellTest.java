@@ -10,38 +10,26 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ShellTest {
 
     @Test
-    public void testShell() throws IOException, InterruptedException {
-        String path = Main.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+    public void testShell() {
+        String inputString =
+                "echo 123 | wc \n" +
+                "a=ex\n" +
+                "b=it\n" +
+                "ExitMsg=exxiitt\n" +
+                "$a$b\n" +
+                "echo DO NOT PRINT THIS!";
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
-        ProcessBuilder pb = new ProcessBuilder("java", "ru.itmo.softwaredesign.nbash.Main").directory(new File(path));
-        Process ps = pb.start();
-        BufferedWriter input = new BufferedWriter(new OutputStreamWriter(ps.getOutputStream()));
+        System.setIn(new ByteArrayInputStream(inputString.getBytes()));
+        System.setOut(new PrintStream(outputStream));
+
+        Shell console = new Shell();
+        console.run();
 
         String expected =
                 "ƞBash> 1 1 4\n" +
-                "ƞBash> ƞBash> ƞBash> ƞBash> exxiitt";
+                        "ƞBash> ƞBash> ƞBash> ƞBash> exxiitt";
 
-        input.write(
-            "echo 123 | wc \n" +
-            "a=ex\n" +
-            "b=it\n" +
-            "ExitMsg=exxiitt\n" +
-            "$a$b\n" +
-            "echo DO NOT PRINT THIS!"
-        );
-        Thread.sleep(2000);
-        input.close();
-        ps.waitFor();
-
-        ByteArrayOutputStream result = new ByteArrayOutputStream();
-        byte[] buffer = new byte[1024];
-        int length;
-        while ((length = ps.getInputStream().read(buffer)) != -1) {
-            result.write(buffer, 0, length);
-            if (length > 1) break;;
-        }
-        ps.destroy();
-
-        assertEquals(expected.trim(), result.toString().trim());
+        assertEquals(expected.trim(), outputStream.toString().trim());
     }
 }
