@@ -1,6 +1,6 @@
 package ru.itmo.softwaredesign.nbash.executor.utils;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import ru.itmo.softwaredesign.nbash.executor.Task;
 
 import java.io.BufferedReader;
@@ -14,7 +14,7 @@ import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_SUCCESS;
 public class EchoTest {
 
     @Test
-    void testEcho() {
+    public void testEcho() {
         Task catTask = (new Echo()).build(new ArrayList<>());
         String data = "";
         catTask.setStdIn(new BufferedReader(new StringReader(data)));
@@ -23,7 +23,7 @@ public class EchoTest {
 
 
     @Test
-    void testEcho2Args() {
+    public void testEcho2Args() {
         List<String> args = new ArrayList<>();
         args.add("hello");
         args.add("world");

@@ -13,13 +13,6 @@ public class TaskFactory {
     // known internal commands
     private static final Map<String, TaskBuilder> internals = new HashMap<>();
 
-    private final static Task notFoundTask = new Task() {
-        @Override
-        public ExitCode execute() {
-            return ExitCode.COMMAND_NOT_FOUND;
-        }
-    };
-
     static {
         // Internal command builders
         internals.put("echo", new Echo());
