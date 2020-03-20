@@ -26,26 +26,8 @@ public class Grep implements TaskBuilder {
 
     private static class GrepImpl extends Task {
 
-        private static final CommandLineParser parser = new DefaultParser();
-        private static final HelpFormatter formatter = new HelpFormatter();
-        private static final Options options = new Options();
-
-        static {
-            options.addOption("i", "ignore-case", false,
-                    "Ignore case distinctions, so that characters that " +
-                            "differ only in case match each other.");
-            options.addOption("A", "after-context", true,
-                    "Print  <arg>  lines  of  trailing  context  after matching lines.");
-            options.addOption("w", "word-regexp", false,
-                    " Select only those lines containing matches that form whole words. ");
-        }
-
         protected GrepImpl(List<String> args) {
             super(args);
-        }
-
-        private void printHelp() {
-            formatter.printHelp(" grep [OPTIONS] PATTERN FILE", options);
         }
 
         @Override
@@ -57,7 +39,7 @@ public class Grep implements TaskBuilder {
                         : Pattern.compile(parsedOpts.pattern);
 
                 BufferedReader reader = new BufferedReader(new FileReader(parsedOpts.fileName));
-                int linesFromMatched = 0;
+                int linesFromMatched = parsedOpts.afterContext;
 
                 StringJoiner localBuffer = new StringJoiner("\n");
 
@@ -80,7 +62,7 @@ public class Grep implements TaskBuilder {
                 stdOut.append(localBuffer.toString());
 
             } catch (ParseException e) {
-                printHelp();
+                ParsedOptions.printHelp();
                 return EXIT_FAILURE;
             } catch (IOException e) {
                 return EXIT_FAILURE;
@@ -90,6 +72,20 @@ public class Grep implements TaskBuilder {
         }
 
         private static class ParsedOptions {
+            private static final CommandLineParser parser = new DefaultParser();
+            private static final HelpFormatter formatter = new HelpFormatter();
+            private static final Options options = new Options();
+
+            static {
+                options.addOption("i", "ignore-case", false,
+                        "Ignore case distinctions, so that characters that " +
+                                "differ only in case match each other.");
+                options.addOption("A", "after-context", true,
+                        "Print  <arg>  lines  of  trailing  context  after matching lines.");
+                options.addOption("w", "word-regexp", false,
+                        " Select only those lines containing matches that form whole words. ");
+            }
+
             final boolean ignoreCase;
             final int afterContext;
             final boolean wordRegexp;
@@ -109,8 +105,20 @@ public class Grep implements TaskBuilder {
                 fileName = cmd.getArgs()[1];
 
                 ignoreCase = cmd.hasOption("i");
-                afterContext = cmd.hasOption("A") ? Integer.parseInt(cmd.getOptionValue("A")) : 0;
+                if (cmd.hasOption("A")) {
+                    if (cmd.getOptionValue("A").matches("\\d+")) {
+                        afterContext = Integer.parseInt(cmd.getOptionValue("A"));
+                    } else {
+                        throw new ParseException("Invalid value for -A option");
+                    }
+                } else {
+                    afterContext = 0;
+                }
                 wordRegexp = cmd.hasOption("w");
+            }
+
+            public static void printHelp() {
+                formatter.printHelp(" grep [OPTIONS] PATTERN FILE", options);
             }
         }
     }
