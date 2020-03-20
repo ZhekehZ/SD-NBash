@@ -34,6 +34,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="args4j:args4j:2.33" level="project" />
+    <orderEntry type="library" name="commons-cli:commons-cli:1.4" level="project" />
   </component>
 </module>

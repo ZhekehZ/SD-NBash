@@ -1,16 +1,12 @@
 package ru.itmo.softwaredesign.nbash.executor.utils;
 
 
-import org.kohsuke.args4j.Argument;
-import org.kohsuke.args4j.CmdLineException;
-import org.kohsuke.args4j.CmdLineParser;
-import org.kohsuke.args4j.Option;
+import org.apache.commons.cli.*;
 import ru.itmo.softwaredesign.nbash.executor.ExitCode;
 import ru.itmo.softwaredesign.nbash.executor.Task;
 import ru.itmo.softwaredesign.nbash.executor.TaskBuilder;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
@@ -19,6 +15,7 @@ import java.util.regex.Pattern;
 
 import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_FAILURE;
 import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_SUCCESS;
+
 
 public class Grep implements TaskBuilder {
 
@@ -29,74 +26,52 @@ public class Grep implements TaskBuilder {
 
     private static class GrepImpl extends Task {
 
-        private static class CommandLine {
-            @Option(name = "-i", usage = "ignore-case")
-            public boolean ignoreCase = false;
+        private static final CommandLineParser parser = new DefaultParser();
+        private static final HelpFormatter formatter = new HelpFormatter();
+        private static final Options options = new Options();
 
-            @Option(name = "-w", usage = "word-regexp")
-            public boolean wordRegexp = false;
-
-            @Option(name = "-A", usage = "after-context")
-            public int lines = 0;
-
-            @Argument(index = 0, required = true, usage = "pattern")
-            public String pattern;
-
-            @Argument(index = 1, required = true, usage = "file")
-            public String file = null;
-
-            private CommandLine() {}
-
-            public static CommandLine parseArgs(List<String> args) {
-                CommandLine parsed = new CommandLine();
-                CmdLineParser parser = new CmdLineParser(parsed);
-
-                try {
-                    parser.parseArgument(args);
-                } catch (CmdLineException e) {
-                    return null;
-                }
-
-                return parsed;
-            }
+        static {
+            options.addOption("i", "ignore-case", false,
+                    "Ignore case distinctions, so that characters that " +
+                            "differ only in case match each other.");
+            options.addOption("A", "after-context", true,
+                    "Print  <arg>  lines  of  trailing  context  after matching lines.");
+            options.addOption("w", "word-regexp", false,
+                    " Select only those lines containing matches that form whole words. ");
         }
 
         protected GrepImpl(List<String> args) {
             super(args);
         }
 
+        private void printHelp() {
+            formatter.printHelp(" grep [OPTIONS] PATTERN FILE", options);
+        }
+
         @Override
         public ExitCode execute() {
-            CommandLine parsedArgs = CommandLine.parseArgs(args);
-            if (parsedArgs == null) {
-                return EXIT_FAILURE;
-            }
-
-            if (parsedArgs.file == null) {
-                return EXIT_FAILURE;
-            }
-
             try {
-                Pattern pattern = parsedArgs.ignoreCase ? Pattern.compile(parsedArgs.pattern.toLowerCase(),
-                        Pattern.CASE_INSENSITIVE)
-                        : Pattern.compile(parsedArgs.pattern);
+                ParsedOptions parsedOpts = new ParsedOptions(args);
 
-                BufferedReader reader = new BufferedReader(new FileReader(parsedArgs.file));
+                Pattern pattern = parsedOpts.ignoreCase ? Pattern.compile(parsedOpts.pattern, Pattern.CASE_INSENSITIVE)
+                        : Pattern.compile(parsedOpts.pattern);
+
+                BufferedReader reader = new BufferedReader(new FileReader(parsedOpts.fileName));
                 int linesFromMatched = 0;
 
                 StringJoiner localBuffer = new StringJoiner("\n");
 
-                String line = null;
+                String line;
                 while ((line = reader.readLine()) != null) {
                     boolean matched = false;
-                    if (parsedArgs.wordRegexp) {
+                    if (parsedOpts.wordRegexp) {
                         for (String word : line.split("\\s+")) {
                             matched |= pattern.matcher(word).matches();
                         }
                     } else {
                         matched = pattern.matcher(line).find();
                     }
-                    if (matched || linesFromMatched < parsedArgs.lines) {
+                    if (matched || linesFromMatched < parsedOpts.afterContext) {
                         localBuffer.add(line);
                     }
                     linesFromMatched = matched ? 0 : linesFromMatched + 1;
@@ -104,13 +79,39 @@ public class Grep implements TaskBuilder {
 
                 stdOut.append(localBuffer.toString());
 
-            } catch (FileNotFoundException e) {
+            } catch (ParseException e) {
+                printHelp();
                 return EXIT_FAILURE;
             } catch (IOException e) {
                 return EXIT_FAILURE;
             }
 
             return EXIT_SUCCESS;
+        }
+
+        private static class ParsedOptions {
+            final boolean ignoreCase;
+            final int afterContext;
+            final boolean wordRegexp;
+            final String pattern;
+            final String fileName;
+
+            ParsedOptions(List<String> args) throws ParseException {
+                String[] raw_args = new String[args.size()];
+                args.toArray(raw_args);
+                CommandLine cmd = parser.parse(options, raw_args);
+
+                if (cmd.getArgs().length != 2) {
+                    throw new ParseException("Invalid arguments");
+                }
+
+                pattern = cmd.getArgs()[0];
+                fileName = cmd.getArgs()[1];
+
+                ignoreCase = cmd.hasOption("i");
+                afterContext = cmd.hasOption("A") ? Integer.parseInt(cmd.getOptionValue("A")) : 0;
+                wordRegexp = cmd.hasOption("w");
+            }
         }
     }
 
