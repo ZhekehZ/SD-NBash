@@ -1,7 +1,6 @@
 package ru.itmo.softwaredesign.nbash.executor;
 
-
-import com.sun.istack.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import ru.itmo.softwaredesign.nbash.executor.utils.*;
 
 import java.util.HashMap;
