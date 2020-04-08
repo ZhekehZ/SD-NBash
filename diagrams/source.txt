@@ -1,0 +1,42 @@
+[Visitor]
+[Customer||commentBook(book);rateBook(book)]
+[Cart||addItem(book);delItem(book);calcCost()]
+[DBManager]
+[Catalogue||findByName(name);findByAuthor(author);getList(orderedBy, filteredBy)]
+[EmbeddedCatalogue||getXMLRepresentation()]
+[WishList||addItem(book);delItem(book);addToCart(Cart)]
+[Order||cancel();getDetails();pay();getBill()]
+[Book|name;author;uid;comments;rating;salesman]
+[Salesman||addBook(Book);delBook(Book)]
+[Profile|name;uid;type;lastSession|login(uname, passwd);logout();updateProfile(newData)]
+[UsersManages]
+[Admin||commentBook(book, comment);acceptComment(book, comment);delComment(book, comment)]
+
+[Visitor]^-[Customer]
+[Visitor]-observe>[Catalogue]
+[Customer]<>->[Cart]
+[Customer]++->[Profile]
+[Salesman]++->[Profile]
+[Customer]<>->[WishList]
+[Customer]<>-*>[Order]
+
+[Cart]-create>[Order]
+[Catalogue]
+[Catalogue]^-[EmbeddedCatalogue]
+
+[WishList]-adds item>[Cart]
+
+
+[Profile]-save changes>[DBManager]
+[Catalogue]->[DBManager]
+[Catalogue]<>-*>[Book]
+
+[Salesman]-modify>[Catalogue]
+
+[UsersManages]<>-*>[Visitor]
+[UsersManages]<>-*>[Salesman]
+[UsersManages]<>->[Catalogue]
+[UsersManages]<>->[Admin]
+
+[Admin]++->[Profile]
+[Admin]->[Catalogue]
