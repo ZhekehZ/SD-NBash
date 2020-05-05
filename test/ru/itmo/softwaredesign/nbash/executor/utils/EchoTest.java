@@ -8,7 +8,7 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_SUCCESS;
 
 public class EchoTest {

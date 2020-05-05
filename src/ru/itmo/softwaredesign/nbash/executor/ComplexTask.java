@@ -13,7 +13,7 @@ import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_SUCCESS;
  */
 class ComplexTask extends Task {
 
-    private List<Task> tasks;
+    private final List<Task> tasks;
 
     public ComplexTask(List<List<String>> args, Map<String, String> environment) {
         super(null);

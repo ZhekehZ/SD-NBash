@@ -4,14 +4,12 @@ import org.junit.Test;
 import ru.itmo.softwaredesign.nbash.executor.Task;
 
 import java.io.*;
-import java.lang.reflect.Array;
-import java.nio.CharBuffer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static ru.itmo.softwaredesign.nbash.executor.ExitCode.EXIT_FAILURE;
 import static ru.itmo.softwaredesign.nbash.executor.ExitCode.IO_ERROR;
 

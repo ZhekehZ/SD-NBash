@@ -103,7 +103,7 @@ public class TokenizerTest {
 
     @Test
     public void testContinueTokenizing() {
-        for (int i : new Integer[]{2, 3, 7, 15, 30}){
+        for (int i : new Integer[]{2, 3, 7, 15, 30}) {
             String str = "Abb=\"cccc\" | 'dd' | lel \" a | b | c \" elele ";
             TokenType[] expectedTypes = new TokenType[]{TTR, TTA, TTD, DEL, TTP, DEL, TTS, DEL, TTP, DEL, TTR, DEL, TTD, DEL, TTR, DEL};
             String[] expected = new String[]{"Abb", null, "cccc", null, null, null, "dd", null, null, null, "lel", null, " a | b | c ", null, "elele", null};

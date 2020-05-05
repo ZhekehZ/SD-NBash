@@ -8,15 +8,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class SubstitutorTest {
-
-    Map<String, String> env;
 
     private final TokenType TTR = TokenType.REGULAR_WORD;
     private final TokenType TTP = TokenType.PIPE_OPERATOR;
     private final TokenType DEL = TokenType.DELIMITER;
+    Map<String, String> env;
 
     @Before
     public void setUp() throws Exception {
@@ -38,7 +37,7 @@ public class SubstitutorTest {
         TokenType[] expectedType = {TTR};
 
         env.put("a", "ex");
-        env.put("b","it");
+        env.put("b", "it");
         testSubstituteHelper(str, expectedType, expectedStr);
     }
 
@@ -46,7 +45,7 @@ public class SubstitutorTest {
     public void testSubstituteAllWithPipes() {
         String str = "cat $file | wc -c";
         String[] expectedStr = {"cat", null, "my_file.txt", null, null, null, "wc", null, "-c"};
-        TokenType[] expectedType = { TTR, DEL, TTR, DEL, TTP, DEL, TTR, DEL, TTR };
+        TokenType[] expectedType = {TTR, DEL, TTR, DEL, TTP, DEL, TTR, DEL, TTR};
         env.put("file", "my_file.txt");
         testSubstituteHelper(str, expectedType, expectedStr);
     }
@@ -55,7 +54,7 @@ public class SubstitutorTest {
     public void testSubstituteComplex() {
         String str = "ABCDE$aFGH ABCDE\"$a\"FGH 'ABCDE$aFGH' $a";
         String[] expectedStr = {"ABCDE", null, "ABCDEkekFGH", null, "ABCDE$aFGH", null, "kek"};
-        TokenType[] expectedType = { TTR, DEL, TTR, DEL, TTR, DEL, TTR };
+        TokenType[] expectedType = {TTR, DEL, TTR, DEL, TTR, DEL, TTR};
         env.put("a", "kek");
 
         testSubstituteHelper(str, expectedType, expectedStr);

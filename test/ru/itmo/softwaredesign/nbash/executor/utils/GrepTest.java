@@ -5,9 +5,7 @@ import ru.itmo.softwaredesign.nbash.executor.ExitCode;
 import ru.itmo.softwaredesign.nbash.executor.Task;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.StringReader;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
