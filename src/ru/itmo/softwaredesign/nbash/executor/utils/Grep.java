@@ -33,12 +33,18 @@ public class Grep implements TaskBuilder {
         @Override
         public ExitCode execute() {
             try {
-                ParsedOptions parsedOpts = new ParsedOptions(args);
+                ParsedOptions parsedOpts = ParsedOptions.of(args);
 
                 Pattern pattern = parsedOpts.ignoreCase ? Pattern.compile(parsedOpts.pattern, Pattern.CASE_INSENSITIVE)
                         : Pattern.compile(parsedOpts.pattern);
 
-                BufferedReader reader = new BufferedReader(new FileReader(parsedOpts.fileName));
+                BufferedReader reader;
+                if (parsedOpts.fileName != null) {
+                    reader = new BufferedReader(new FileReader(parsedOpts.fileName));
+                } else {
+                    reader = new BufferedReader(stdIn);
+                }
+
                 int linesFromMatched = parsedOpts.afterContext;
 
                 StringJoiner localBuffer = new StringJoiner("\n");
@@ -71,19 +77,47 @@ public class Grep implements TaskBuilder {
             return EXIT_SUCCESS;
         }
 
+
+        private enum GrepOptions {
+            IGNORE_CASE("i", "ignore-case", false,
+                    "Ignore case distinctions, so that characters that differ only in case match each other."
+            ),
+            AFTER_CONTEXT(
+                    "A", "after-context", true,
+                    "Print  <arg>  lines  of  trailing  context  after matching lines."
+            ),
+            WORD_REGEXP(
+                    "w", "word-regexp", false,
+                    " Select only those lines containing matches that form whole words. "
+            );
+
+            private final String opt;
+            private final String longOpt;
+            private final boolean hasArg;
+            private final String description;
+
+            GrepOptions(String opt, String longOpt, boolean hasArg, String description) {
+                this.opt = opt;
+                this.longOpt = longOpt;
+                this.hasArg = hasArg;
+                this.description = description;
+            }
+
+            public static void registerAll(Options opt) {
+                for (GrepOptions option : GrepOptions.values()) {
+                    opt.addOption(option.opt, option.longOpt, option.hasArg, option.description);
+                }
+            }
+        }
+
+
         private static class ParsedOptions {
             private static final CommandLineParser parser = new DefaultParser();
             private static final HelpFormatter formatter = new HelpFormatter();
             private static final Options options = new Options();
 
             static {
-                options.addOption("i", "ignore-case", false,
-                        "Ignore case distinctions, so that characters that " +
-                                "differ only in case match each other.");
-                options.addOption("A", "after-context", true,
-                        "Print  <arg>  lines  of  trailing  context  after matching lines.");
-                options.addOption("w", "word-regexp", false,
-                        " Select only those lines containing matches that form whole words. ");
+                GrepOptions.registerAll(options);
             }
 
             final boolean ignoreCase;
@@ -92,35 +126,46 @@ public class Grep implements TaskBuilder {
             final String pattern;
             final String fileName;
 
-            ParsedOptions(List<String> args) throws ParseException {
+            public ParsedOptions(boolean ignoreCase, int afterContext, boolean wordRegexp, String pattern, String fileName) {
+                this.ignoreCase = ignoreCase;
+                this.afterContext = afterContext;
+                this.wordRegexp = wordRegexp;
+                this.pattern = pattern;
+                this.fileName = fileName;
+            }
+
+            private static ParsedOptions of(List<String> args) throws ParseException {
                 String[] raw_args = new String[args.size()];
                 args.toArray(raw_args);
                 CommandLine cmd = parser.parse(options, raw_args);
 
-                if (cmd.getArgs().length != 2) {
+                if (cmd.getArgs().length != 1 && cmd.getArgs().length != 2) {
                     throw new ParseException("Invalid arguments");
                 }
 
-                pattern = cmd.getArgs()[0];
-                fileName = cmd.getArgs()[1];
+                boolean ignoreCase = cmd.hasOption(GrepOptions.IGNORE_CASE.opt);
+                int afterContext = 0;
+                boolean wordRegexp = cmd.hasOption(GrepOptions.WORD_REGEXP.opt);
+                String pattern = cmd.getArgs()[0];
+                String fileName = cmd.getArgs().length > 1 ? cmd.getArgs()[1] : null;
 
-                ignoreCase = cmd.hasOption("i");
-                if (cmd.hasOption("A")) {
-                    if (cmd.getOptionValue("A").matches("\\d+")) {
-                        afterContext = Integer.parseInt(cmd.getOptionValue("A"));
+                if (cmd.hasOption(GrepOptions.AFTER_CONTEXT.opt)) {
+                    if (cmd.getOptionValue(GrepOptions.AFTER_CONTEXT.opt).matches("\\d+")) {
+                        afterContext = Integer.parseInt(cmd.getOptionValue(GrepOptions.AFTER_CONTEXT.opt));
                     } else {
-                        throw new ParseException("Invalid value for -A option");
+                        throw new ParseException("Invalid value for -" + GrepOptions.AFTER_CONTEXT.opt + " option");
                     }
-                } else {
-                    afterContext = 0;
                 }
-                wordRegexp = cmd.hasOption("w");
+
+                return new ParsedOptions(ignoreCase, afterContext, wordRegexp, pattern, fileName);
             }
 
             public static void printHelp() {
                 formatter.printHelp(" grep [OPTIONS] PATTERN FILE", options);
             }
+
         }
+
     }
 
 
