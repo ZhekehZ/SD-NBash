@@ -1,0 +1,463 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='37 2 1101 844' xmlns:xlink='http://www.w3.org/1999/xlink' width='1101.0px' font-size='13' font-family='Arial, LiberationSans' version='1.1' height='844.0px'>
+  <defs>
+<style type='text/css'><![CDATA[svg text {text-rendering: geometricPrecision;}]]></style>    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='98fb98' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(152, 251, 152)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='cf28db8a-84c3-4a26-bb3d-dba1dd7440e9' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(152, 251, 152)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='6adaff' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(190, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(106, 218, 255)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='78cf07b5-d841-4578-832b-8bc37a78bb9a' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(190, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(106, 218, 255)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='83d9594a-e379-4c9c-bbb2-5d67c96b8181' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(190, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(106, 218, 255)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='36171910-cb4b-4f11-aaf2-2e72c831bae7' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(190, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(106, 218, 255)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='bedb89' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 246)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(190, 219, 137)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='87cb56f8-41c6-4f57-a5fd-9434914422b0' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 246)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(190, 219, 137)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='cd3e82c3-c050-466a-994a-63f6c24c9cbf' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='4f50fd1c-e112-449a-9088-383c92a80fc2' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='7fc57d42-306f-4c44-b384-0d4cf1a54383' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='d84670bc-9828-4577-81d1-9d75268b0eef' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='4fcd3a90-159b-4a5f-96b2-b4a7719fb5e7' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='ac5b0302-84d0-4c37-948e-14ba19d66631' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='9a4d8e91-4f4d-4aac-84b1-57570d32f0c5' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='1e1af638-9ba3-43cf-95d4-6d48133ec0dc' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='fce74860-680e-4885-ba70-25cd77930fa2' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='ace8c284-9ec9-4230-af66-8d6bec2e3006' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='93e8df7c-abe7-4c2f-950c-80279f2eb44a' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='eb5bc5a9-107f-4b8a-9aa8-e962f8cccd6a' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='5e67acce-1da9-41bd-a4e0-86d02572379c' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='6a696071-6e4f-48d3-9a97-02dca1b0ac6d' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(190, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(106, 218, 255)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='779e6a06-0b93-4cc0-9c85-ba38640c35d6' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+    <linearGradient y1='0.0%' x1='0.0%' y2='100.0%' x2='0.0%' id='eae64415-6411-4bc2-aa20-6864ae41345a' spreadMethod='pad'>
+      <stop stop-opacity='1' offset='0' stop-color='rgb(255, 255, 255)'/>
+      <stop stop-opacity='1' offset='100' stop-color='rgb(238, 238, 238)'/>
+    </linearGradient>
+  </defs>
+  <desc>UsecaseDiagram</desc>
+  <g transform='translate(78.0,633.0)' id='_ng5-IU0CEDiffO-ZOUWzYQ'>
+    <circle r='6.5' cx='20.0' cy='8.5' stroke-width='1.5' fill='url(#cf28db8a-84c3-4a26-bb3d-dba1dd7440e9)' stroke='rgb(92, 151, 92)' look='allInOne'/>
+    <line y1='15.0' x1='20.0' y2='45.5' x2='20.0' stroke-width='1.5' fill='url(#cf28db8a-84c3-4a26-bb3d-dba1dd7440e9)' stroke='rgb(92, 151, 92)' look='allInOne'/>
+    <line y1='26.0' x1='6.0' y2='26.0' x2='34.0' stroke-width='1.5' fill='url(#cf28db8a-84c3-4a26-bb3d-dba1dd7440e9)' stroke='rgb(92, 151, 92)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='9.2' stroke-width='1.5' fill='url(#cf28db8a-84c3-4a26-bb3d-dba1dd7440e9)' stroke='rgb(92, 151, 92)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='30.799999999999997' fill='url(#cf28db8a-84c3-4a26-bb3d-dba1dd7440e9)' stroke='rgb(92, 151, 92)' look='allInOne'/>
+    <text text-anchor='middle' x='20.0' y='78.0' font-size='13' font-style='normal' fill='rgb(0, 0, 0)'>Бригадир</text>
+  </g>
+  <g transform='translate(1045.0,736.0)' id='_qZSggE0CEDiffO-ZOUWzYQ'>
+    <circle r='6.5' cx='20.0' cy='8.5' stroke-width='1.5' fill='url(#78cf07b5-d841-4578-832b-8bc37a78bb9a)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='15.0' x1='20.0' y2='45.5' x2='20.0' stroke-width='1.5' fill='url(#78cf07b5-d841-4578-832b-8bc37a78bb9a)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='26.0' x1='6.0' y2='26.0' x2='34.0' stroke-width='1.5' fill='url(#78cf07b5-d841-4578-832b-8bc37a78bb9a)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='9.2' stroke-width='1.5' fill='url(#78cf07b5-d841-4578-832b-8bc37a78bb9a)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='30.799999999999997' fill='url(#78cf07b5-d841-4578-832b-8bc37a78bb9a)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <text text-anchor='middle' x='20.0' y='78.0' font-size='13' font-style='normal' fill='rgb(0, 0, 0)'>Начальник цеха</text>
+  </g>
+  <g transform='translate(1045.0,336.0)' id='_W7l8QE0DEDiffO-ZOUWzYQ'>
+    <circle r='6.5' cx='20.0' cy='8.5' stroke-width='1.5' fill='url(#83d9594a-e379-4c9c-bbb2-5d67c96b8181)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='15.0' x1='20.0' y2='45.5' x2='20.0' stroke-width='1.5' fill='url(#83d9594a-e379-4c9c-bbb2-5d67c96b8181)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='26.0' x1='6.0' y2='26.0' x2='34.0' stroke-width='1.5' fill='url(#83d9594a-e379-4c9c-bbb2-5d67c96b8181)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='9.2' stroke-width='1.5' fill='url(#83d9594a-e379-4c9c-bbb2-5d67c96b8181)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='30.799999999999997' fill='url(#83d9594a-e379-4c9c-bbb2-5d67c96b8181)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <text text-anchor='middle' x='20.0' y='78.0' font-size='13' font-style='normal' fill='rgb(0, 0, 0)'>Диспетчер</text>
+  </g>
+  <g transform='translate(1045.0,623.0)' id='_hOS7IE0DEDiffO-ZOUWzYQ'>
+    <circle r='6.5' cx='20.0' cy='8.5' stroke-width='1.5' fill='url(#36171910-cb4b-4f11-aaf2-2e72c831bae7)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='15.0' x1='20.0' y2='45.5' x2='20.0' stroke-width='1.5' fill='url(#36171910-cb4b-4f11-aaf2-2e72c831bae7)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='26.0' x1='6.0' y2='26.0' x2='34.0' stroke-width='1.5' fill='url(#36171910-cb4b-4f11-aaf2-2e72c831bae7)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='9.2' stroke-width='1.5' fill='url(#36171910-cb4b-4f11-aaf2-2e72c831bae7)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='30.799999999999997' fill='url(#36171910-cb4b-4f11-aaf2-2e72c831bae7)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <text text-anchor='middle' x='20.0' y='78.0' font-size='13' font-style='normal' fill='rgb(0, 0, 0)'>Бухгалтерия</text>
+  </g>
+  <g transform='translate(78.0,374.0)' id='_E6MW4U0EEDiffO-ZOUWzYQ'>
+    <circle r='6.5' cx='20.0' cy='8.5' stroke-width='1.5' fill='url(#87cb56f8-41c6-4f57-a5fd-9434914422b0)' stroke='rgb(114, 132, 83)' look='allInOne'/>
+    <line y1='15.0' x1='20.0' y2='45.5' x2='20.0' stroke-width='1.5' fill='url(#87cb56f8-41c6-4f57-a5fd-9434914422b0)' stroke='rgb(114, 132, 83)' look='allInOne'/>
+    <line y1='26.0' x1='6.0' y2='26.0' x2='34.0' stroke-width='1.5' fill='url(#87cb56f8-41c6-4f57-a5fd-9434914422b0)' stroke='rgb(114, 132, 83)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='9.2' stroke-width='1.5' fill='url(#87cb56f8-41c6-4f57-a5fd-9434914422b0)' stroke='rgb(114, 132, 83)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='30.799999999999997' fill='url(#87cb56f8-41c6-4f57-a5fd-9434914422b0)' stroke='rgb(114, 132, 83)' look='allInOne'/>
+    <text text-anchor='middle' x='20.0' y='78.0' font-size='13' font-style='normal' fill='rgb(0, 0, 0)'>Ремонтник</text>
+  </g>
+  <g transform='translate(219.0,72.0)' id='_QwJ4Qk0EEDiffO-ZOUWzYQ'>
+    <ellipse cx='97.5' cy='50.0' rx='97.5' ry='50.0' stroke-width='1.0' fill='url(#cd3e82c3-c050-466a-994a-63f6c24c9cbf)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,35.5)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='97.5' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Провести диагностику</text>
+      </g>
+      <line y1='21.0' x1='29.25' y2='21.0' x2='165.75' stroke-width='1.0' stroke='rgb(187, 187, 187)' look='border'/>
+      <g transform='translate(0.0,0.0)'>
+        <text text-anchor='middle' x='97.5' y='42.0' font-size='13' fill='rgb(0, 0, 0)'>Выявить информацию</text>
+        <text text-anchor='middle' x='97.5' y='55.0' font-size='13' fill='rgb(0, 0, 0)'>информацию о дефекте</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(402.0,229.0)' id='_RHFxlE0EEDiffO-ZOUWzYQ'>
+    <ellipse cx='81.5' cy='35.0' rx='81.5' ry='35.0' stroke-width='1.0' fill='url(#4f50fd1c-e112-449a-9088-383c92a80fc2)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,28.5)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='81.5' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Зарегистрировать дефект</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(595.0,87.0)' id='_0wPbUU0EEDiffO-ZOUWzYQ'>
+    <ellipse cx='60.0' cy='35.0' rx='60.0' ry='35.0' stroke-width='1.0' fill='url(#7fc57d42-306f-4c44-b384-0d4cf1a54383)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,22.0)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Определить место</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='26.0' font-size='13' fill='rgb(3, 54, 86)'>дефекта</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(595.0,170.0)' id='_A0448E0FEDiffO-ZOUWzYQ'>
+    <ellipse cx='60.0' cy='35.0' rx='60.0' ry='35.0' stroke-width='1.0' fill='url(#d84670bc-9828-4577-81d1-9d75268b0eef)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,22.0)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Определить</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='26.0' font-size='13' fill='rgb(3, 54, 86)'>причину дефекта</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(447.0,32.0)' id='_Z3QxQU0FEDiffO-ZOUWzYQ'>
+    <polygon stroke-width='0.5' fill='rgb(255, 255, 255)' stroke='rgb(107, 107, 107)' look='allInOne' points='0.0,0.0 0.0,50.0 130.0,50.0 130.0,15.0 115.0,0.0'/>
+    <polygon stroke-width='1.0' fill='rgb(107, 107, 107)' look='border' stroke='rgb(107, 107, 107)' points='115.0,1.0 115.0,15.0 129.0,15.0'/>
+    <clipPath id='clip_Z3QxQU0FEDiffO-ZOUWzYQ'>
+      <rect x='5.0' width='105.0px' y='5.0' height='40.0px'/>
+    </clipPath>
+    <g transform='translate(0.0,0.0)'>
+      <text clip-path='url(#clip_Z3QxQU0FEDiffO-ZOUWzYQ)' x='5.0' y='18.0' font-size='13' fill='rgb(45, 45, 45)'>Если выявлен</text>
+      <text clip-path='url(#clip_Z3QxQU0FEDiffO-ZOUWzYQ)' x='5.0' y='31.0' font-size='13' fill='rgb(45, 45, 45)'>дефект</text>
+    </g>
+  </g>
+  <g transform='translate(251.0,257.0)' id='_2GtpkU0FEDiffO-ZOUWzYQ'>
+    <ellipse cx='65.0' cy='32.0' rx='65.0' ry='32.0' stroke-width='1.0' fill='url(#4fcd3a90-159b-4a5f-96b2-b4a7719fb5e7)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,25.5)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='65.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Выполнить ремонт</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(251.0,424.0)' id='_zI1GsU0GEDiffO-ZOUWzYQ'>
+    <ellipse cx='65.0' cy='35.0' rx='65.0' ry='35.0' stroke-width='1.0' fill='url(#ac5b0302-84d0-4c37-948e-14ba19d66631)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,28.5)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='65.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Предоставить отчет</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(253.0,341.0)' id='_NYbnJU0HEDiffO-ZOUWzYQ'>
+    <ellipse cx='63.0' cy='35.0' rx='63.0' ry='35.0' stroke-width='1.0' fill='url(#9a4d8e91-4f4d-4aac-84b1-57570d32f0c5)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,28.5)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='63.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Получить задание</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(251.0,505.0)' id='_RuiEs00HEDiffO-ZOUWzYQ'>
+    <ellipse cx='65.0' cy='35.0' rx='65.0' ry='35.0' stroke-width='1.0' fill='url(#1e1af638-9ba3-43cf-95d4-6d48133ec0dc)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,28.5)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='65.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Войти в систему</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(251.0,585.0)' id='_UvQqwE0HEDiffO-ZOUWzYQ'>
+    <ellipse cx='65.0' cy='35.0' rx='65.0' ry='35.0' stroke-width='1.0' fill='url(#fce74860-680e-4885-ba70-25cd77930fa2)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,28.5)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='65.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Выйти из системы</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(127.0,487.0)' id='_kG7YUU0HEDiffO-ZOUWzYQ'>
+    <circle r='6.5' cx='20.0' cy='8.5' stroke-width='1.5' fill='rgb(255, 255, 255)' stroke='rgb(136, 136, 136)' look='allInOne'/>
+    <line y1='15.0' x1='20.0' y2='45.5' x2='20.0' stroke-width='1.5' fill='rgb(255, 255, 255)' stroke='rgb(136, 136, 136)' look='allInOne'/>
+    <line y1='26.0' x1='6.0' y2='26.0' x2='34.0' stroke-width='1.5' fill='rgb(255, 255, 255)' stroke='rgb(136, 136, 136)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='9.2' stroke-width='1.5' fill='rgb(255, 255, 255)' stroke='rgb(136, 136, 136)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='30.799999999999997' fill='rgb(255, 255, 255)' stroke='rgb(136, 136, 136)' look='allInOne'/>
+    <text text-anchor='middle' x='20.0' y='78.0' font-size='13' font-style='normal' fill='rgb(0, 0, 0)'>Работник</text>
+  </g>
+  <g transform='translate(251.0,680.0)' id='_7CeHAU0HEDiffO-ZOUWzYQ'>
+    <ellipse cx='65.0' cy='36.5' rx='65.0' ry='36.5' stroke-width='1.0' fill='url(#ace8c284-9ec9-4230-af66-8d6bec2e3006)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,23.5)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='65.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Назначить ремонт</text>
+        <text font-weight='bold' text-anchor='middle' x='65.0' y='26.0' font-size='13' fill='rgb(3, 54, 86)'>работнику</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(770.0,206.0)' id='_gYPqoU0IEDiffO-ZOUWzYQ'>
+    <ellipse cx='60.0' cy='40.5' rx='60.0' ry='40.5' stroke-width='1.0' fill='url(#93e8df7c-abe7-4c2f-950c-80279f2eb44a)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,21.0)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Получить</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='26.0' font-size='13' fill='rgb(3, 54, 86)'>информацию о</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='39.0' font-size='13' fill='rgb(3, 54, 86)'>свободных местах</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(770.0,301.0)' id='_nL1eUU0IEDiffO-ZOUWzYQ'>
+    <ellipse cx='60.0' cy='40.0' rx='60.0' ry='40.0' stroke-width='1.0' fill='url(#eb5bc5a9-107f-4b8a-9aa8-e962f8cccd6a)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,14.0)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Получить</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='26.0' font-size='13' fill='rgb(3, 54, 86)'>информацию о</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='39.0' font-size='13' fill='rgb(3, 54, 86)'>свободных</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='52.0' font-size='13' fill='rgb(3, 54, 86)'>рабочих</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(770.0,399.0)' id='_wK2AsU0IEDiffO-ZOUWzYQ'>
+    <ellipse cx='60.0' cy='40.0' rx='60.0' ry='40.0' stroke-width='1.0' fill='url(#5e67acce-1da9-41bd-a4e0-86d02572379c)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,20.5)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Направить</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='26.0' font-size='13' fill='rgb(3, 54, 86)'>автомобиль в</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='39.0' font-size='13' fill='rgb(3, 54, 86)'>ремонтную зону</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(580.0,301.0)' id='_IpxNsU0JEDiffO-ZOUWzYQ'>
+    <polygon stroke-width='0.5' fill='rgb(255, 255, 255)' stroke='rgb(107, 107, 107)' look='allInOne' points='0.0,0.0 0.0,150.0 150.0,150.0 150.0,15.0 135.0,0.0'/>
+    <polygon stroke-width='1.0' fill='rgb(107, 107, 107)' look='border' stroke='rgb(107, 107, 107)' points='135.0,1.0 135.0,15.0 149.0,15.0'/>
+    <clipPath id='clip_IpxNsU0JEDiffO-ZOUWzYQ'>
+      <rect x='5.0' width='125.0px' y='5.0' height='140.0px'/>
+    </clipPath>
+    <g transform='translate(0.0,0.0)'>
+      <text clip-path='url(#clip_IpxNsU0JEDiffO-ZOUWzYQ)' x='5.0' y='18.0' font-size='13' fill='rgb(45, 45, 45)'>Предоставить</text>
+      <text clip-path='url(#clip_IpxNsU0JEDiffO-ZOUWzYQ)' x='5.0' y='31.0' font-size='13' fill='rgb(45, 45, 45)'>информацию:</text>
+      <text clip-path='url(#clip_IpxNsU0JEDiffO-ZOUWzYQ)' x='5.0' y='44.0' font-size='13' fill='rgb(45, 45, 45)'> </text>
+      <text clip-path='url(#clip_IpxNsU0JEDiffO-ZOUWzYQ)' x='5.0' y='57.0' font-size='13' fill='rgb(45, 45, 45)'>-Место дефекта</text>
+      <text clip-path='url(#clip_IpxNsU0JEDiffO-ZOUWzYQ)' x='5.0' y='70.0' font-size='13' fill='rgb(45, 45, 45)'>-Возможная</text>
+      <text clip-path='url(#clip_IpxNsU0JEDiffO-ZOUWzYQ)' x='5.0' y='83.0' font-size='13' fill='rgb(45, 45, 45)'>причина</text>
+      <text clip-path='url(#clip_IpxNsU0JEDiffO-ZOUWzYQ)' x='5.0' y='96.0' font-size='13' fill='rgb(45, 45, 45)'>-Номер автомобиля</text>
+      <text clip-path='url(#clip_IpxNsU0JEDiffO-ZOUWzYQ)' x='5.0' y='109.0' font-size='13' fill='rgb(45, 45, 45)'>-Дата поступления</text>
+      <text clip-path='url(#clip_IpxNsU0JEDiffO-ZOUWzYQ)' x='5.0' y='122.0' font-size='13' fill='rgb(45, 45, 45)'>-ФИО ремонтника</text>
+    </g>
+  </g>
+  <g transform='translate(580.0,470.0)' id='_ZIoM0U0JEDiffO-ZOUWzYQ'>
+    <polygon stroke-width='0.5' fill='rgb(255, 255, 255)' stroke='rgb(107, 107, 107)' look='allInOne' points='0.0,0.0 0.0,130.0 150.0,130.0 150.0,15.0 135.0,0.0'/>
+    <polygon stroke-width='1.0' fill='rgb(107, 107, 107)' look='border' stroke='rgb(107, 107, 107)' points='135.0,1.0 135.0,15.0 149.0,15.0'/>
+    <clipPath id='clip_ZIoM0U0JEDiffO-ZOUWzYQ'>
+      <rect x='5.0' width='125.0px' y='5.0' height='120.0px'/>
+    </clipPath>
+    <g transform='translate(0.0,0.0)'>
+      <text clip-path='url(#clip_ZIoM0U0JEDiffO-ZOUWzYQ)' x='5.0' y='18.0' font-size='13' fill='rgb(45, 45, 45)'>Предоставить</text>
+      <text clip-path='url(#clip_ZIoM0U0JEDiffO-ZOUWzYQ)' x='5.0' y='31.0' font-size='13' fill='rgb(45, 45, 45)'>информацию:</text>
+      <text clip-path='url(#clip_ZIoM0U0JEDiffO-ZOUWzYQ)' x='5.0' y='44.0' font-size='13' fill='rgb(45, 45, 45)'> </text>
+      <text clip-path='url(#clip_ZIoM0U0JEDiffO-ZOUWzYQ)' x='5.0' y='57.0' font-size='13' fill='rgb(45, 45, 45)'>-ФИО ремонтника</text>
+      <text clip-path='url(#clip_ZIoM0U0JEDiffO-ZOUWzYQ)' x='5.0' y='70.0' font-size='13' fill='rgb(45, 45, 45)'>-Результат ремонта</text>
+      <text clip-path='url(#clip_ZIoM0U0JEDiffO-ZOUWzYQ)' x='5.0' y='83.0' font-size='13' fill='rgb(45, 45, 45)'>-Время начала и</text>
+      <text clip-path='url(#clip_ZIoM0U0JEDiffO-ZOUWzYQ)' x='5.0' y='96.0' font-size='13' fill='rgb(45, 45, 45)'>конца</text>
+      <text clip-path='url(#clip_ZIoM0U0JEDiffO-ZOUWzYQ)' x='5.0' y='109.0' font-size='13' fill='rgb(45, 45, 45)'>-Ремонтное место</text>
+    </g>
+  </g>
+  <g transform='translate(1045.0,505.0)' id='_0cOg4E0JEDiffO-ZOUWzYQ'>
+    <circle r='6.5' cx='20.0' cy='8.5' stroke-width='1.5' fill='url(#6a696071-6e4f-48d3-9a97-02dca1b0ac6d)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='15.0' x1='20.0' y2='45.5' x2='20.0' stroke-width='1.5' fill='url(#6a696071-6e4f-48d3-9a97-02dca1b0ac6d)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='26.0' x1='6.0' y2='26.0' x2='34.0' stroke-width='1.5' fill='url(#6a696071-6e4f-48d3-9a97-02dca1b0ac6d)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='9.2' stroke-width='1.5' fill='url(#6a696071-6e4f-48d3-9a97-02dca1b0ac6d)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='30.799999999999997' fill='url(#6a696071-6e4f-48d3-9a97-02dca1b0ac6d)' stroke='rgb(64, 131, 153)' look='allInOne'/>
+    <text text-anchor='middle' x='20.0' y='78.0' font-size='13' font-style='normal' fill='rgb(0, 0, 0)'>Отдел контроля</text>
+    <text text-anchor='middle' x='20.0' y='91.0' font-size='13' font-style='normal' fill='rgb(0, 0, 0)'>качества</text>
+  </g>
+  <g transform='translate(639.0,719.0)' id='_6kZZC00JEDiffO-ZOUWzYQ'>
+    <ellipse cx='60.0' cy='30.0' rx='60.0' ry='30.0' stroke-width='1.0' fill='url(#779e6a06-0b93-4cc0-9c85-ba38640c35d6)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,17.0)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Получить сводный</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='26.0' font-size='13' fill='rgb(3, 54, 86)'>отчет</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(452.0,720.0)' id='__uJhEE0JEDiffO-ZOUWzYQ'>
+    <ellipse cx='60.0' cy='29.5' rx='60.0' ry='29.5' stroke-width='1.0' fill='url(#eae64415-6411-4bc2-aa20-6864ae41345a)' stroke='rgb(187, 187, 187)' look='allInOne'/>
+    <g transform='translate(0.0,10.0)'>
+      <g transform='translate(0.0,0.0)'>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='13.0' font-size='13' fill='rgb(3, 54, 86)'>Получить</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='26.0' font-size='13' fill='rgb(3, 54, 86)'>статистику по</text>
+        <text font-weight='bold' text-anchor='middle' x='60.0' y='39.0' font-size='13' fill='rgb(3, 54, 86)'>ремонтам</text>
+      </g>
+    </g>
+  </g>
+  <g transform='translate(931.0,633.0)' id='_a2720E0LEDiffO-ZOUWzYQ'>
+    <circle r='6.5' cx='20.0' cy='8.5' stroke-width='1.5' fill='rgb(255, 255, 255)' stroke='rgb(136, 136, 136)' look='allInOne'/>
+    <line y1='15.0' x1='20.0' y2='45.5' x2='20.0' stroke-width='1.5' fill='rgb(255, 255, 255)' stroke='rgb(136, 136, 136)' look='allInOne'/>
+    <line y1='26.0' x1='6.0' y2='26.0' x2='34.0' stroke-width='1.5' fill='rgb(255, 255, 255)' stroke='rgb(136, 136, 136)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='9.2' stroke-width='1.5' fill='rgb(255, 255, 255)' stroke='rgb(136, 136, 136)' look='allInOne'/>
+    <line y1='45.5' x1='20.0' y2='63.0' x2='30.799999999999997' fill='rgb(255, 255, 255)' stroke='rgb(136, 136, 136)' look='allInOne'/>
+    <text text-anchor='middle' x='20.0' y='78.0' font-size='13' font-style='normal' fill='rgb(0, 0, 0)'>Управляющий</text>
+  </g>
+  <g transform='translate(67.0,295.0)' id='_esM8YE0EEDiffO-ZOUWzYQ'/>
+  <text text-anchor='middle' x='553.0' y='186.0' fill='rgb(0, 0, 0)'>« include »</text>
+  <text text-anchor='middle' x='600.0' y='256.0' fill='rgb(0, 0, 0)'>« include »</text>
+  <g transform='translate(111.0,377.0)' id='_34Ij4E0FEDiffO-ZOUWzYQ'/>
+  <text text-anchor='middle' x='437.0' y='186.0' fill='rgb(0, 0, 0)'>« extend »</text>
+  <text text-anchor='middle' x='441.0' y='473.0' fill='rgb(0, 0, 0)'>« include »</text>
+  <text text-anchor='middle' x='491.0' y='390.0' fill='rgb(0, 0, 0)'>« include »</text>
+  <g transform='translate(101.0,547.0)' id='_sOi_sU0HEDiffO-ZOUWzYQ'/>
+  <g transform='translate(99.0,577.0)' id='_stYQxU0HEDiffO-ZOUWzYQ'/>
+  <g transform='translate(92.0,517.0)' id='_uiQHtE0HEDiffO-ZOUWzYQ'/>
+  <g transform='translate(80.0,705.0)' id='_9E-xUE0HEDiffO-ZOUWzYQ'/>
+  <g transform='translate(111.0,475.0)' id='_VG_Y0E0IEDiffO-ZOUWzYQ'/>
+  <g transform='translate(824.0,337.0)' id='_2opxoE0IEDiffO-ZOUWzYQ'/>
+  <g transform='translate(821.0,376.0)' id='_3PTh9k0IEDiffO-ZOUWzYQ'/>
+  <g transform='translate(827.0,417.0)' id='_4nnYsE0IEDiffO-ZOUWzYQ'/>
+  <text text-anchor='middle' x='615.0' y='740.0' fill='rgb(0, 0, 0)'>« include »</text>
+  <g transform='translate(749.0,720.0)' id='_h3HVAE0LEDiffO-ZOUWzYQ'/>
+  <g id='_esGOsE0EEDiffO-ZOUWzYQ'>
+    <line y1='387.0' x1='118.0' y2='172.0' x2='279.0' id='_esIq8k0EEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_e9N-ck0FEDiffO-ZOUWzYQ'>
+    <line y1='229.0' x1='526.0' y2='157.0' x2='612.0' stroke-dasharray='7, 3' id='_e9PzoE0FEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polyline transform='translate(612.0,157.0) rotate(50.063616853030084)' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)' points='-5.0,10.0 0.0,0.0 5.0,10.0'/>
+  </g>
+  <g id='_facF8U0FEDiffO-ZOUWzYQ'>
+    <line y1='236.0' x1='565.0' y2='225.0' x2='595.0' stroke-dasharray='7, 3' id='_facF9k0FEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polyline transform='translate(595.0,225.0) rotate(69.86369657175186)' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)' points='-5.0,10.0 0.0,0.0 5.0,10.0'/>
+  </g>
+  <g id='_33-L0k0FEDiffO-ZOUWzYQ'>
+    <line y1='402.0' x1='118.0' y2='321.0' x2='260.0' id='_34DEUk0FEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_gpL7kE0GEDiffO-ZOUWzYQ'>
+    <line y1='229.0' x1='442.0' y2='172.0' x2='375.0' stroke-dasharray='7, 3' id='_gpNJsU0GEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polyline transform='translate(375.0,172.0) rotate(-49.61064931866062)' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)' points='-5.0,10.0 0.0,0.0 5.0,10.0'/>
+  </g>
+  <line y1='170.0' x1='443.0' y2='82.0' x2='496.0' stroke-dasharray='1, 2' id='_o53YU00GEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  <g id='_5akxkk0GEDiffO-ZOUWzYQ'>
+    <line y1='321.0' x1='345.0' y2='459.0' x2='470.0' stroke-dasharray='7, 3' id='_5alYpE0GEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_59ppck0GEDiffO-ZOUWzYQ'>
+    <line y1='299.0' x1='484.0' y2='376.0' x2='484.0' stroke-dasharray='7, 3' id='_59qQgk0GEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_oZBfok0HEDiffO-ZOUWzYQ'>
+    <line y1='454.0' x1='115.0' y2='487.0' x2='129.0' id='_oZCtwE0HEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polygon transform='translate(129.0,487.0) rotate(157.01128319791937)' stroke-width='1.0' fill='rgb(255, 255, 255)' stroke='rgb(0, 0, 0)' points='-6.0,10.0 0.0,0.0 6.0,10.0'/>
+  </g>
+  <g id='_o11Xck0HEDiffO-ZOUWzYQ'>
+    <line y1='633.0' x1='111.0' y2='567.0' x2='133.0' id='_o11-g00HEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polygon transform='translate(133.0,567.0) rotate(18.43494882292201)' stroke-width='1.0' fill='rgb(255, 255, 255)' stroke='rgb(0, 0, 0)' points='-6.0,10.0 0.0,0.0 6.0,10.0'/>
+  </g>
+  <g id='_sOXZgk0HEDiffO-ZOUWzYQ'>
+    <line y1='528.0' x1='167.0' y2='535.0' x2='251.0' id='_sOeHMk0HEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_stPt5E0HEDiffO-ZOUWzYQ'>
+    <line y1='538.0' x1='167.0' y2='585.0' x2='252.0' id='_stTYQk0HEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_uiG9wU0HEDiffO-ZOUWzYQ'>
+    <line y1='518.0' x1='167.0' y2='485.0' x2='251.0' id='_uiMdUk0HEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_9E1AVE0HEDiffO-ZOUWzYQ'>
+    <line y1='677.0' x1='118.0' y2='703.0' x2='251.0' id='_9E4qsk0HEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_VGwvVE0IEDiffO-ZOUWzYQ'>
+    <line y1='509.0' x1='167.0' y2='411.0' x2='276.0' id='_VG3dAE0IEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_2oZS8E0IEDiffO-ZOUWzYQ'>
+    <line y1='365.0' x1='1045.0' y2='279.0' x2='890.0' id='_2oeygk0IEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_3PB1IU0IEDiffO-ZOUWzYQ'>
+    <line y1='349.0' x1='890.0' y2='373.0' x2='1045.0' id='_3PJJ4k0IEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_4ncZkk0IEDiffO-ZOUWzYQ'>
+    <line y1='422.0' x1='890.0' y2='381.0' x2='1045.0' id='_4nh5Ik0IEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <line y1='382.0' x1='529.0' y2='380.0' x2='580.0' stroke-dasharray='1, 2' id='_JbYQ0k0JEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  <line y1='478.0' x1='472.0' y2='511.0' x2='580.0' stroke-dasharray='1, 2' id='_gDJu800JEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  <g id='_DOsPok0KEDiffO-ZOUWzYQ'>
+    <line y1='749.0' x1='639.0' y2='749.0' x2='572.0' stroke-dasharray='7, 3' id='_DOs2tE0KEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polyline transform='translate(572.0,749.0) rotate(-90.0)' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)' points='-5.0,10.0 0.0,0.0 5.0,10.0'/>
+  </g>
+  <g id='_c0g90k0LEDiffO-ZOUWzYQ'>
+    <line y1='673.0' x1='118.0' y2='673.0' x2='931.0' id='_c0hk4k0LEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polygon transform='translate(931.0,673.0) rotate(90.0)' stroke-width='1.0' fill='rgb(255, 255, 255)' stroke='rgb(0, 0, 0)' points='-6.0,10.0 0.0,0.0 6.0,10.0'/>
+  </g>
+  <g id='_ezz8Ek0LEDiffO-ZOUWzYQ'>
+    <line y1='567.0' x1='1045.0' y2='650.0' x2='971.0' id='_ez0jJE0LEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polygon transform='translate(971.0,650.0) rotate(-138.28088077260944)' stroke-width='1.0' fill='rgb(255, 255, 255)' stroke='rgb(0, 0, 0)' points='-6.0,10.0 0.0,0.0 6.0,10.0'/>
+  </g>
+  <g id='_h22PQ00LEDiffO-ZOUWzYQ'>
+    <line y1='679.0' x1='931.0' y2='730.0' x2='759.0' id='_h27u0k0LEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+  </g>
+  <g id='_lAC00k0LEDiffO-ZOUWzYQ'>
+    <line y1='757.0' x1='1045.0' y2='691.0' x2='971.0' id='_lAC0100LEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polygon transform='translate(971.0,691.0) rotate(-48.270487923183566)' stroke-width='1.0' fill='rgb(255, 255, 255)' stroke='rgb(0, 0, 0)' points='-6.0,10.0 0.0,0.0 6.0,10.0'/>
+  </g>
+  <g id='_mAlEwE0LEDiffO-ZOUWzYQ'>
+    <line y1='664.0' x1='1045.0' y2='671.0' x2='971.0' id='_mAlExU0LEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polygon transform='translate(971.0,671.0) rotate(-95.40379136024971)' stroke-width='1.0' fill='rgb(255, 255, 255)' stroke='rgb(0, 0, 0)' points='-6.0,10.0 0.0,0.0 6.0,10.0'/>
+  </g>
+  <g id='_uFbsAk0LEDiffO-ZOUWzYQ'>
+    <line y1='416.0' x1='1049.0' y2='633.0' x2='966.0' id='_uFcTE00LEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polygon transform='translate(966.0,633.0) rotate(-159.06872330187485)' stroke-width='1.0' fill='rgb(255, 255, 255)' stroke='rgb(0, 0, 0)' points='-6.0,10.0 0.0,0.0 6.0,10.0'/>
+  </g>
+  <g id='_5akxkk0GEDiffO-ZOUWzYQ'>
+    <line y1='459.0' x1='470.0' y2='459.0' x2='381.0' stroke-dasharray='7, 3' id='_RiVCcU0MEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polyline transform='translate(381.0,459.0) rotate(-90.0)' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)' points='-5.0,10.0 0.0,0.0 5.0,10.0'/>
+  </g>
+  <g id='_59ppck0GEDiffO-ZOUWzYQ'>
+    <line y1='376.0' x1='484.0' y2='427.0' x2='381.0' stroke-dasharray='7, 3' id='_W9nmcU0MEDiffO-ZOUWzYQ' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)'/>
+    <polyline transform='translate(381.0,427.0) rotate(-116.34211152588045)' stroke-width='1.0' fill='none' stroke='rgb(0, 0, 0)' points='-5.0,10.0 0.0,0.0 5.0,10.0'/>
+  </g>
+</svg>
