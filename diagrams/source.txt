@@ -1,42 +1,61 @@
-[Visitor]
-[Customer||commentBook(book);rateBook(book)]
-[Cart||addItem(book);delItem(book);calcCost()]
-[DBManager]
-[Catalogue||findByName(name);findByAuthor(author);getList(orderedBy, filteredBy)]
-[EmbeddedCatalogue||getXMLRepresentation()]
-[WishList||addItem(book);delItem(book);addToCart(Cart)]
-[Order||cancel();getDetails();pay();getBill()]
-[Book|name;author;uid;comments;rating;salesman]
-[Salesman||addBook(Book);delBook(Book)]
-[Profile|name;uid;type;lastSession|login(uname, passwd);logout();updateProfile(newData)]
-[UsersManages]
-[Admin||commentBook(book, comment);acceptComment(book, comment);delComment(book, comment)]
+[BookStore]
 
-[Visitor]^-[Customer]
-[Visitor]-observe>[Catalogue]
-[Customer]<>->[Cart]
-[Customer]++->[Profile]
-[Salesman]++->[Profile]
-[Customer]<>->[WishList]
+[BookStore]<>-*>[UnauthorizedPerson]
+[BookStore]<>-*>[AuthorizedPerson]
+[BookStore]++->[Catalogue]
+
+[≪StoreVisitor≫||getCatalogue(): Catalogue]
+[≪Commentator≫ ||comment(book: Book, comment: String): Comment]
+
+[≪StoreVisitor≫;UnauthorizedPerson||logIn(username: String, password: String): AuthorizedPerson?]
+[≪StoreVisitor≫;AuthorizedPerson|db: DBConnection|logOut()]
+
+
+[AuthorizedPerson]++>[Profile]
+
+[AuthorizedPerson]^-[Customer]
+[AuthorizedPerson]^-[Admin]
+[AuthorizedPerson]^-[Salesman]
+
+[Profile|name: String;address: String?;card: CardNum?;settings: ProfileSettings|updateProfile(newProfile: Profile)]
+
+[≪Commentator≫;Customer||rateBook(book: Book, rate: IntInRange\<1, 5\>)]
+
+
+[Salesman||addBook(book: Book);delBook(book: Book)]
+[Catalogue]<modify            -[Salesman]
+
+
+[Catalogue|db: DBConnection|findByName(name: String): List\<Book\>;findByAuthor(author: String): List\<Book\>;getList(orderedBy: Comparator\<Book\>, filteredBy: Predicate\<Book\>): List\<Book\>]
+
+[BookStore]++->[DBConnection]
+
+[DBConnection||getByHashCode\<T\>(hash: Long): T?; getByURI\<T\>(uri: URI): T?; getAllMatches\<T\>(filter: Predicate\<T\>): List\<T\>]
+
+[≪Commentator≫;Admin||acceptComment(comment: Comment);delComment(comment: Comment)]
+
+[BookContainter|books: List\<Book\>|addBook(book: Book);delBook(book: Book)]
+
+[Cart]-^[BookContainter]
+[WishList]-^[BookContainter]
+
+[Cart||calcCost(): Int; createOrder(): Order?]
+[WishList||addToCart(cart: Cart)]
+
+[Customer]++>[Cart]
+[Customer]++>[WishList]
+
 [Customer]<>-*>[Order]
 
-[Cart]-create>[Order]
-[Catalogue]
-[Catalogue]^-[EmbeddedCatalogue]
-
-[WishList]-adds item>[Cart]
+[Order|details: OrderDetails; status: OrderStatus|cancel();getDetails(): OrderDetails; getStatus(): OrderStatus;payByCard(card: CardNum);getBill(): Bill]
 
 
-[Profile]-save changes>[DBManager]
-[Catalogue]->[DBManager]
-[Catalogue]<>-*>[Book]
+[EmbeddedCatalogue||getXMLRepresentation(): XMLText]
+[EmbeddedCatalogue]-^[Catalogue]
 
-[Salesman]-modify>[Catalogue]
 
-[UsersManages]<>-*>[Visitor]
-[UsersManages]<>-*>[Salesman]
-[UsersManages]<>->[Catalogue]
-[UsersManages]<>->[Admin]
 
-[Admin]++->[Profile]
-[Admin]->[Catalogue]
+[Book|name: String;author: String;uri: URI;comments: List\<Comment\>;rating: FloatInRange\<1, 5\>;salesman: Salesman]
+[Comment|author: AuthorizedPerson; date: Timestamp; text: String]
+
+[BookStoreRESTfulAPI||get(data: XMLText): Response;put(data: XMLText): Response;delete(data: XMLText):Response;head(data: XMLText): Response; connect(): Response]
